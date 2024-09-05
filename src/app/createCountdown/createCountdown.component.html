@@ -1,0 +1,10 @@
+<p>Name your Event</p>
+<form class="countdown-form" [formGroup]="countdownForm" (submit)="createCountdown()">
+    <label for="first-name">Event Name</label>
+    <input id="first-name" type="text" formControlName="name">
+
+    <label for="last-name">Timestamp</label>
+    <input id="last-name" type="datetime-local" formControlName="timestamp">
+
+    <button type="submit" class="primary">Save</button>
+</form>
