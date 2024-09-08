@@ -80,9 +80,13 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    max-width: 700px;
+    /* max-width: 700px; */
     margin-bottom: 3rem;
     flex-direction: column;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    height: 70vh
   }
 
   .content h1 {
@@ -166,7 +170,6 @@
   @media screen and (max-width: 650px) {
     .content {
       flex-direction: column;
-      width: max-content;
     }
 
     .divider {
@@ -181,8 +184,8 @@
 <main class="main">
   <div class="content">
    
-    <app-countdown *ngIf="savedCD !== undefined" [activeCountdown]="savedCD"/>
-    <app-create-countdown />
+    <app-countdown *ngIf="savedCD" [activeCountdown]="savedCD"/>
+    <app-create-countdown  (createNewCountdown)="createNewCountdown($event)" [initialCountdown]="savedCD"/>
     <!-- <div class="left-side">
       <svg
         xmlns="http://www.w3.org/2000/svg"

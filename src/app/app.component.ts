@@ -3,11 +3,9 @@ import { RouterOutlet } from '@angular/router';
 import { createCountdownComponent } from "./createCountdown/createCountdown.component";
 import { addIcons } from "ionicons";
 import { CountdownComponent } from './countdown/countdown.component';
-import { Countdown } from './countdown';
+import { Countdown } from './types/countdown';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { addCountdown } from './state/countdown.actions';
-// import { AppModule } from './app.module';
 
 
 @Component({
@@ -21,12 +19,16 @@ export class AppComponent implements OnInit{
   title = 'Countdown App';
   savedCD!: Countdown;
 
-  constructor(private store: Store<{countdown: Countdown}>) {
-    console.log(store.select('countdown'))
+  /**
+   * 
+   * @param countdown newly added countdown
+   */  
+  createNewCountdown(countdown: Countdown) {
+    this.savedCD = countdown;
   }
 
   ngOnInit() {
-    let scd = localStorage.getItem('countdown')
+    let scd = localStorage.getItem('countdown') ?? JSON.stringify({id: 1, name: "now", timestamp: new Date()})
     console.log('Countdown with values ' + scd + " found in Prefs")
     if(scd) {
       var json = JSON.parse(scd)
@@ -35,8 +37,6 @@ export class AppComponent implements OnInit{
         name: json.name,
         timestamp: Date.parse(json.timestamp)
       } 
-
-      this.store.dispatch(addCountdown(this.savedCD))
 
     }
   }

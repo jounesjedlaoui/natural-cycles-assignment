@@ -1,10 +1,17 @@
-<p>Name your Event</p>
-<form class="countdown-form" [formGroup]="countdownForm" (submit)="createCountdown()">
-    <label for="first-name">Event Name</label>
-    <input id="first-name" type="text" formControlName="name">
 
-    <label for="last-name">Timestamp</label>
-    <input id="last-name" type="datetime-local" formControlName="timestamp">
-
-    <button type="submit" class="primary">Save</button>
+<form [formGroup]="countdownForm" (submit)="createCountdown()">
+    <div class="countdown-form">
+        <section class="input-field" >
+            <label for="first-name">{{'Event Name ' + (errors.name ? 'missing': '')}}</label>
+            <input id="first-name" type="text" formControlName="name" [ngClass]="{'error': errors.name}" [placeholder]="initialCountdown.name">
+        </section>
+        
+        <button type="submit" class="submit-button">Save</button>
+        
+        <section class="input-field">
+            <label for="last-name">{{'Timestamp ' + (errors.timestamp ? 'missing': '')}}</label>
+            <input id="last-name" type="date" formControlName="timestamp" [ngClass]="{'error': errors.timestamp}" [placeholder]="initialCountdown.timestamp">
+        </section>
+    </div>
 </form>
+    

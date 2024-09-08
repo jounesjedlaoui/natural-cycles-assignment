@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 
 import { addCountdown } from './countdown.actions';
-import { Countdown } from '../countdown';
+import { Countdown } from '../types/countdown';
 
 export const initialState: Countdown = {id: 0, name: 'Midsommar', timestamp: 1393977600};
 

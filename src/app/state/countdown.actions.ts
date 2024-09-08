@@ -1,5 +1,5 @@
 import { createAction, createActionGroup, props } from "@ngrx/store";
-import { Countdown } from "../countdown";
+import { Countdown } from "../types/countdown";
 
 // export const countdownActions = createActionGroup({
 //     source: 'Countdown',

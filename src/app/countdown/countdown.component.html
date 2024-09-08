@@ -1,9 +1,5 @@
-<h1>Time to {{ activeCountdown.name }}</h1>
+
 <section class="countdown">
-    {{ aCD$ }}
-    {{ activeCountdown.name }}
-    {{ activeCountdown.timestamp}}
-</section>
-<section>
-    <button (click)="resetCountdown()" class="primary">Reset Countdown</button>
+    <h1 id="countdown_title">Time to {{ _activeCountdown.name }}</h1>    
+    <p id="countdown_p">{{ currentTimeToCountdown }}</p>
 </section>
