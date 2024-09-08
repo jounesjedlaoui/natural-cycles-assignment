@@ -25,6 +25,7 @@
         formControlName="timestamp"
         [ngClass]="{ error: errors.timestamp }"
         [placeholder]="initialCountdown.timestamp"
+        (change)="createCountdown()"
       />
     </section>
   </div>
