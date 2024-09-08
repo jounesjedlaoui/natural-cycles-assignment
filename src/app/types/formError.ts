@@ -1,4 +1,4 @@
 export interface FormError {
-    name: boolean;
-    timestamp: boolean
-  }
+  name: boolean;
+  timestamp: boolean;
+}

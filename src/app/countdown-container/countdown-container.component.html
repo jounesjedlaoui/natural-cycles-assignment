@@ -1,0 +1,7 @@
+<div class="content">
+  <app-countdown *ngIf="savedCD" [activeCountdown]="savedCD" />
+  <app-create-countdown
+    (createNewCountdown)="createNewCountdown($event)"
+    [initialCountdown]="savedCD"
+  />
+</div>

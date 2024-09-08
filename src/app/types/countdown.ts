@@ -1,5 +1,4 @@
 export interface Countdown {
-    id: number,
-    name: string;
-    timestamp: number
-  }
+  name: string;
+  timestamp: number;
+}
