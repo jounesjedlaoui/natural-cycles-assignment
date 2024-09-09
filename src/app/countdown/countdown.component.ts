@@ -112,7 +112,7 @@ export class CountdownComponent {
 
     // Resize countdown element if length of string has changed
     if (this.currentTimeToCountdown.length !== timeString.length) {
-      this.textService.resizeText('countdown_p');
+      this.textService.resizeText('countdown_p', 'main');
     }
     // Construct the result string
     this.currentTimeToCountdown = `${timeString}`;
@@ -122,7 +122,7 @@ export class CountdownComponent {
    * Resize the Header and Countdown Text. Gets called on window-resize and when the component is initialized.
    */
   updateView() {
-    this.textService.resizeText('countdown_title');
-    this.textService.resizeText('countdown_p');
+    this.textService.resizeText('countdown_title', 'main');
+    this.textService.resizeText('countdown_p', 'main');
   }
 }

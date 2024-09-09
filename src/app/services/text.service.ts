@@ -6,17 +6,21 @@ import { Injectable } from '@angular/core';
 export class TextService {
   /**
    * Resizes a DOM-Text-Element to fit the entire width of the screen/viewport.
-   * @param id id of the DOM-Element that should be resized
+   * @param id id of the DOM-Element that should be resized.
+   * @param fitTo id of the DOM-Element that the text should fill fully.
    */
-  resizeText(id: string) {
+  resizeText(id: string, fitTo: string) {
     try {
       // get DOM-Element by id
       let element = document.getElementById(id);
       // get Bounding Box of the element
       let elementDimensions = element?.getBoundingClientRect();
 
+      // get parent DOM-Element by id
+      let parent = document.getElementById(fitTo);
       // get the total screen width
-      const innerWidth = window.innerWidth;
+      const innerWidth = parent!.getBoundingClientRect().width;
+
       // calculate the coefficent between the total available screen width and the elements current width
       let widthRatio = innerWidth / elementDimensions!.width;
 
