@@ -16,7 +16,7 @@ Run `ng serve` for a local dev server. Navigate to `http://localhost:4200/`. The
 
 ## Code formatting
 
-Install *prettier* by running `npm install --save-dev --save-exact prettier`
+Install *prettier* by running `npm install --save-dev --save-exact prettier` \
 Run `prettier . --write` to apply the formatting rules.
 
 ## Build
