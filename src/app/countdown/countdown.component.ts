@@ -71,6 +71,10 @@ export class CountdownComponent {
   onResize() {
     this.updateView();
   }
+  @HostListener('window:orientationchange')
+  onOrientationChange() {
+    this.updateView();
+  }
 
   /**
    * Update String displaying the time until the Countdown-Timestamp in the format: 'XX days, XX h, XX m, XX s'
