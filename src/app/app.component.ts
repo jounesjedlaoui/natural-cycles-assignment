@@ -5,7 +5,7 @@ import { CountdownContainerComponent } from './countdown-container/countdown-con
 
 /**
  * This is the base component in which the Countdown-Components are anchored.
- * Its purpose is to eventually host other components too, so that the Countdown-Components can be handled independently of the root-Stack
+ * Its purpose is to eventually host other components too, so that the Countdown-Components can be handled independently of the root-Component
  */
 
 @Component({

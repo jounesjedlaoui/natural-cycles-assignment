@@ -27,7 +27,7 @@ export class createCountdownComponent {
   // Contains form inputs to set a new Countdown
   countdownForm!: FormGroup;
 
-  // One Boolean for every Input-Field. Used for conditional CSS-class enabling to highlight input-errors.
+  // One Boolean for every Input-Field. Used for conditional CSS-class to highlight input-errors.
   errors: FormError = {
     name: false,
     timestamp: false,
