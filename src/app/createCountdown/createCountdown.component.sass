@@ -3,6 +3,8 @@
     display: flex
     flex-direction: column
     margin: 5vmin
+    width: -webkit-fill-available
+
     .input-field
         display: flex
         flex-direction: column
@@ -22,6 +24,8 @@
             border-radius: 3px
             border: 1px solid grey
             color: black
+            width: -webkit-fill-available
+
         .error
             border: 1px solid red
             box-shadow: red 0px 1px 6px 0px
@@ -37,3 +41,6 @@
         justify-content: center
         .input-field
             width: 30vw
+            input
+                width: unset
+            
